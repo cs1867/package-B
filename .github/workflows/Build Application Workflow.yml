@@ -1,0 +1,36 @@
+name: Publish GitHub Actions Artifacts 
+
+on:
+  push:
+    branches: [ main ]
+ 
+jobs:
+
+       
+  archive-build-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Create a temporary artifact downloads folder
+        run: mkdir downloads
+        
+      - name: Add artifacts to publish to the temp folder
+        run: |
+          cd downloads
+          echo 'beta'    > beta.html
+          cd ..
+    
+      - name: Use the Upload Artifact GitHub Action
+        uses: actions/upload-artifact@v2
+        with: 
+          name: assets-for-download
+          path: downloads
+          
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: /usr/bin/python /home/perfsonar/read_url.py ${{ github.event.repository.name }}
