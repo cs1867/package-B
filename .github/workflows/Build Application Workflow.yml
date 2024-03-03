@@ -1,12 +1,15 @@
 name: GitHub Workflow  
 
 on:
-  push:
-    branches: [ main ]
- 
+ workflow_run:
+   workflows: "package-A"
+   branches: main
+   types:
+     - completed
+
+
 jobs:
 
-       
   archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
@@ -26,11 +29,4 @@ jobs:
           name: assets-for-download
           path: downloads
           
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script: /usr/bin/python /home/perfsonar/read_url.py ${{ github.event.repository.name }}
+     
