@@ -1,4 +1,4 @@
-name: Publish GitHub Actions Artifacts 
+name: GitHub Workflow  
 
 on:
   push:
