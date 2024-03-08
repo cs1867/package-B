@@ -16,8 +16,8 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: <name of the artifact>
-          repo: <owner/repository-name>
+          name: repo-A
+          repo: cs1867/package-A
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: List downloaded files
