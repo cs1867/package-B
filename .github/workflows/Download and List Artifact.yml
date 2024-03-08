@@ -16,7 +16,6 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: repo-A
           repository: cs1867/package-A
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
