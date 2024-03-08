@@ -11,6 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
+      
+      - name: Download artifact from repo-B
+        uses: actions/download-artifact@v2
+        with:
+          name: repo-B
+          path: downloads
+
+      
       - name: display structure of downloaded files
         run: ls -R
         
