@@ -15,9 +15,10 @@ jobs:
       - name: Download artifact from repo-B
         uses: actions/download-artifact@v2
         with:
-          name: repo-B
+          name: repo-A
           path: downloads
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
       
       - name: display structure of downloaded files
         run: ls -R
