@@ -15,9 +15,16 @@ jobs:
       - name: Create a temporary artifact downloads folder
         run: mkdir downloads
         
+      - name: Download artifact from repo-A
+        uses: actions/download-artifact@v2
+        with:
+          name: repo-A
+          path: downloads
+          
       - name: Add artifacts to publish to the temp folder
         run: |
           cd downloads
+          ls -al 
           echo 'beta'    > beta.html
           cd ..
     
