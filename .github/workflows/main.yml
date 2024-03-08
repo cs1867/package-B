@@ -18,7 +18,7 @@ jobs:
       - name: Download artifact from repo-A
         uses: actions/download-artifact@v2
         with:
-          name: package-A
+          name: repo-A
           path: downloads
           
       - name: Add artifacts to publish to the temp folder
