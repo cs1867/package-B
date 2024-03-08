@@ -16,7 +16,31 @@ jobs:
 
       - name: Create a temporary artifact downloads folder
         run: mkdir downloads
-        
+      name: Download and List Artifact from Another Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  download-artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          repository: cs1867/package-A
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List downloaded files
+        run: |
+          ls -l
+          
       - name: Add artifacts to publish to the temp folder
         run: |
           cd downloads
