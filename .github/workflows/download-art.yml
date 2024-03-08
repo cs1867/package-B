@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
-      - name: isplay structure of downloaded files
+      - name: display structure of downloaded files
         rrun: ls -R
         
  
