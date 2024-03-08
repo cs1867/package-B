@@ -22,6 +22,9 @@ jobs:
           repository: cs1867/package-A
           github-token: ${{ secrets.GIT_ACTIONS }}
           run-id: 8207535164
+      
+      - name: Display structure of downloaded files
+        run: ls -R   
 
       - name: Add artifacts to publish to the temp folder
         run: |
@@ -36,12 +39,12 @@ jobs:
           name: repo-B
           path: downloads
           
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script: /usr/bin/python /home/perfsonar/read_url.py ${{ github.event.repository.name }}
+      # - name: executing remote ssh commands using password
+      #   uses: appleboy/ssh-action@v1.0.3
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     port: ${{ secrets.PORT }}
+      #     script: /usr/bin/python /home/perfsonar/read_url.py ${{ github.event.repository.name }}
 
