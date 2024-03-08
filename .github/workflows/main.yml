@@ -20,7 +20,7 @@ jobs:
         with:
           name: repo-A
           repository: cs1867/package-A
-          github-token: ${{ secrets.GITHUB_PAT }}
+          github-token: ${{ secrets.GIT_ACTIONS }}
           run-id: 8207535164
 
       - name: Add artifacts to publish to the temp folder
