@@ -15,12 +15,12 @@ jobs:
       - name: List Releases
         run: gh release list --repo cs1867/package-A
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW }}
 
       - name: Fetch asset
         run: gh release download --repo cs1867/ *.zip --archive=zip
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW }}
 
       - name: See what we downloaded
         run: ls
