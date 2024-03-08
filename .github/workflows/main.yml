@@ -21,7 +21,7 @@ jobs:
           name: repo-A
           repository: cs1867/package-A
           github-token: ${{ secrets.GIT_ACTIONS }}
-          ##run-id: 8207535164
+          run-id: 8207535164
       
       - name: Display structure of downloaded files
         run: ls -R   
@@ -31,6 +31,11 @@ jobs:
           cd downloads
           ls -al 
           echo 'beta'    > beta.html
+          cat alpha.html >> beta.htmnl
+
+          cat beta.html
+          ls -al 
+          
           cd ..
     
       - name: Use the Upload Artifact GitHub Action
