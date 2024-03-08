@@ -6,13 +6,12 @@ on:
     branches: [ main ]
  
 jobs:
-
        
   archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
       - name: display structure of downloaded files
-        rrun: ls -R
+        run: ls -R
         
  
