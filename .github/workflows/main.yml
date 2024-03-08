@@ -16,7 +16,7 @@ jobs:
         run: mkdir downloads
         
       - name: Download artifact from repo-A
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: repo-A
           path: downloads
