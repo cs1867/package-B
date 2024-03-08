@@ -32,10 +32,8 @@ jobs:
           ls -al 
           echo 'beta'    > beta.html
           cat alpha.html >> beta.htmnl
-
           cat beta.html
           ls -al 
-          
           cd ..
     
       - name: Use the Upload Artifact GitHub Action
