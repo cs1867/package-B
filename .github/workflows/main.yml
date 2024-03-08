@@ -33,11 +33,13 @@ jobs:
         run: |
           cd downloads
           ls -al 
+          echo "cat alpha"
+          cat alpha.html
           echo "now create beta"
           echo 'beta'    > beta.html
           cat beta.html
           echo "now add alpha"
-          cat alpha.html >> beta.htmnl
+          cat alpha.html >> beta.html
           cat beta.html
           ls -al 
           cd ..
