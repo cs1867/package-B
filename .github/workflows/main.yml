@@ -29,11 +29,14 @@ jobs:
           ls -R 
           pwd
 
-      - name: Add artifacts to publish to the temp folder
+      - name: Add artifacts to publish
         run: |
           cd downloads
           ls -al 
+          echo "now create beta"
           echo 'beta'    > beta.html
+          cat beta.html
+          echo "now add alpha"
           cat alpha.html >> beta.htmnl
           cat beta.html
           ls -al 
@@ -45,12 +48,4 @@ jobs:
           name: repo-B
           path: downloads
           
-      # - name: executing remote ssh commands using password
-      #   uses: appleboy/ssh-action@v1.0.3
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     password: ${{ secrets.PASSWORD }}
-      #     port: ${{ secrets.PORT }}
-      #     script: /usr/bin/python /home/perfsonar/read_url.py ${{ github.event.repository.name }}
-
+ 
