@@ -13,7 +13,7 @@ jobs:
       - uses: actions/download-artifact@v4
       
       - name: Download artifact from repo-B
-        uses: actions/download-artifact
+        uses: actions/download-artifact@v3
         with:
           name: repo-A
           path: downloads
