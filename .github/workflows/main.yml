@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Print received variables
         run: |
-         echo "Variable 1: ${{ toJson(github.event.workflow_run.outputs.var1) }}"
+         echo "Variable 1: ${{ github.event.inputs.var1 }}"
       
       - name: Create a temporary artifact downloads folder
         run: mkdir downloads
