@@ -25,7 +25,7 @@ jobs:
       - name: Download artifact from repo-A
         uses: actions/download-artifact@v4
         with:
-          name: repo-A
+          name: repo-A-RHEL
           repository: cs1867/package-A
           path: downloads
           github-token: ${{ secrets.GIT_ACTIONS }}
@@ -54,7 +54,7 @@ jobs:
       - name: Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v2
         with: 
-          name: repo-B
+          name: repo-B-RHEL
           path: downloads
           
  
