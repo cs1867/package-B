@@ -40,11 +40,8 @@ jobs:
         run: |
           cd downloads
           ls -al 
-          echo "cat alpha"
-          cat alpha.html
           echo "now create beta"
-          echo 'beta'    > beta.html
-          cat beta.html
+          echo 'RHEL beta'    > beta.html
           echo "now add alpha"
           cat alpha.html >> beta.html
           cat beta.html
