@@ -2,9 +2,16 @@ name: Publish GitHub Actions Artifacts
 
 on:
   workflow_dispatch:
+    inputs:
+      var1:
+        description: 'Description of var1'
+        required: true
+      var2:
+        description: 'Description of var2'
+        required: true
   push:
     branches: [ main ]
- 
+   
 jobs:
 
        
