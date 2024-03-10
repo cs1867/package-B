@@ -6,9 +6,6 @@ on:
       var1:
         description: 'Description of var1'
         required: true
-      var2:
-        description: 'Description of var2'
-        required: true
   push:
     branches: [ main ]
    
@@ -21,8 +18,6 @@ jobs:
       - name: Print received variables
         run: |
          echo "Variable 1: ${{ toJson(github.event.workflow_run.outputs.var1) }}"
-         echo "Variable 2: ${{ toJson(github.event.workflow_run.outputs.var2) }}"
-       #  echo "Received Run ID: ${{ toJson(github.event.workflow_run.outputs.run_id) }}"
       
       - name: Create a temporary artifact downloads folder
         run: mkdir downloads
