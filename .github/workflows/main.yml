@@ -29,7 +29,7 @@ jobs:
           repository: cs1867/package-A
           path: downloads
           github-token: ${{ secrets.GIT_ACTIONS }}
-          run-id: 8209283190
+          run-id: ${{ github.event.inputs.var1 }}
       
       - name: Display structure of downloaded files
         run: |
