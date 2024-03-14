@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Print received variables
         run: |
-         echo "Variable 1: ${{ github.event.inputs.var1 }}"
+         echo "Variable 1: ${{ github.event.inputs.packageA }}"
       
       - name: Create a temporary artifact downloads folder
         run: mkdir downloads
@@ -29,7 +29,7 @@ jobs:
           repository: cs1867/package-A
           path: downloads
           github-token: ${{ secrets.GIT_ACTIONS }}
-          run-id: ${{ github.event.inputs.var1 }}
+          run-id: ${{ github.event.inputs.packageA }}
       
       - name: Display structure of downloaded files
         run: |
