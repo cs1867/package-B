@@ -6,6 +6,9 @@ on:
       packageA:
         description: Package A Git Run ID'
         required: true
+      packageB:
+        description: Package B Git Run ID'
+        required: true
   #push:
   #  branches: [ main ]
    
@@ -17,8 +20,11 @@ jobs:
     steps:
       - name: Print received variables
         run: |
-         echo "Variable 1: ${{ github.event.inputs.packageA }}"
-      
+         echo "Package B : ${{ github.event.inputs.packageA }}"
+
+      - name: Print received variables
+        run: |
+         echo "Package B : ${{ github.event.inputs.packageB }}"
       - name: Create a temporary artifact downloads folder
         run: mkdir downloads
         
