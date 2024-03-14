@@ -38,13 +38,14 @@ jobs:
 
       - name: Add artifacts to publish
         run: |
+          echo "now create beta"
           cd downloads
           ls -al 
-          echo "now create beta"
-          echo "now add alpha"
+          echo "create file and add alpha"
           cat alpha.html > beta.html
-          echo >> " "
+          echo >> "add RHEL beta "
           echo 'RHEL beta' >> beta.html
+          echo >> "cat beta"
           cat beta.html
           ls -al 
           cd ..
