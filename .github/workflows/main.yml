@@ -6,8 +6,8 @@ on:
       packageA:
         description: Package A Git Run ID'
         required: true
-  push:
-    branches: [ main ]
+  #push:
+  #  branches: [ main ]
    
 jobs:
 
@@ -44,7 +44,7 @@ jobs:
           ls -al 
           echo "create file and add alpha"
           cat alpha.html > beta.html
-          "add RHEL beta to the file"
+          echo "add RHEL beta to the file"
           echo 'RHEL beta' >> beta.html
           echo "cat beta"
           cat beta.html
