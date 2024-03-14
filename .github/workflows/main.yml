@@ -3,8 +3,8 @@ name: Publish GitHub Actions Artifacts
 on:
   workflow_dispatch:
     inputs:
-      var1:
-        description: 'Description of var1'
+      packageA:
+        description: Package A Git Run ID'
         required: true
   push:
     branches: [ main ]
