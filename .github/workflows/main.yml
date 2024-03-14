@@ -40,13 +40,15 @@ jobs:
         run: |
           echo "now create beta"
           cd downloads
+          echo "ls the dir"
           ls -al 
           echo "create file and add alpha"
           cat alpha.html > beta.html
-          echo >> "add RHEL beta "
+          "add RHEL beta to the file"
           echo 'RHEL beta' >> beta.html
-          echo >> "cat beta"
+          echo "cat beta"
           cat beta.html
+          echo "list the dir"
           ls -al 
           cd ..
     
@@ -54,6 +56,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with: 
           name: repo-B-RHEL
-          path: downloads
+          path: downloads/beta.html
           
  
